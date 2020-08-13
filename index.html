@@ -18,28 +18,41 @@
         </div>
     </div>
     <form class="player-form hide">
-        <label class="first-player">
-            player1 name:
-            <input id="player1" type="text" value="Player 1">
-        </label>
+        <fieldset id="player1-setup">
+            <label class="first-player">
+                player1 name:
+                <input id="player1" type="text" value="Player 1">
+            </label>
+            <label class="first-player-choice player-mark-choice">
+                mark type:
+                <input id="player1-mark" type="text">
+            </label>
+        </fieldset>
 
-        <label class="second-player">
-            player2 name:
-            <input id="player2" type="text" value="Player 2">
-        </label>
+        <fieldset id="player2-setup">
+            <label class="second-player">
+                player2 name:
+                <input id="player2" type="text" value="Player 2">
+            </label>
+            <label class="secon-player-choice player-mark-choice">
+                mark type:
+                <input id="player2-mark" type="text">
+            </label>
+        </fieldset>
         <button class="start-btn">Start</button>
     </form>
     <div class="game-board-container hide">
         <div class="game-board_-btn">
-            <button class="game-board_-btns restart-btn">Restart</button>
             <button class="game-board_-btns new-game-btn">New Game</button>
+            <button class="game-board_-btns new-round-btn">New Round</button>
+            <button class="game-board_-btns announcer-btn">Game undergoes</button>
         </div>
         <div class="game-board">
 
         </div>
     </div>
 
-    <script src="main.js"></script>
+    <script src="main2.js"></script>
 </body>
 
 </html>

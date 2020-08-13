@@ -80,6 +80,14 @@ button:active {
   row-gap: 20px;
 }
 
+.player-form fieldset {
+  border: none;
+}
+
+.player-form .player-mark-choice {
+  margin-left: 20px;
+}
+
 .player-form input {
   color: white;
   padding: .5em 1em;
@@ -157,11 +165,29 @@ button:active {
       -ms-flex-direction: column;
           flex-direction: column;
   row-gap: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .game-board_-btns {
   width: 100px;
   padding: 15px 0;
+}
+
+.game-board_-btns:last-child {
+  margin-top: 200px;
+  max-width: 200px;
+  padding: 15px 20px;
+}
+
+.game-board_-btns:last-child:hover {
+  background: var(--primary-clr);
+  color: #fff;
+}
+
+.game-board_-btns:last-child:active {
+  background: var(--primary-clr);
 }
 
 .hide {

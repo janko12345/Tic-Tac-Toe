@@ -10,8 +10,9 @@ const player2Name = document.querySelector("#player2");
 const startBtn = document.querySelector(".start-btn");
 const gameBoardContainer = document.querySelector(".game-board-container");
 const gameBoard = document.querySelector(".game-board");
-const restartBtn = document.querySelector(".restart-btn");
 const newGameBtn = document.querySelector(".new-game-btn");
+const newRoundBtn = document.querySelector(".new-round-btn");
+const announcerBtn = document.querySelector(".announcer-btn");
 playerBtn.addEventListener("click", () => {
     choice.classList.add("hide");
     console.log(form);
@@ -31,21 +32,24 @@ startBtn.addEventListener("click", (e) => {
     form.classList.add("hide");
     gameBoardContainer.classList.remove("hide");
 })
-newGameBtn.addEventListener("click", () => {
+newRoundBtn.addEventListener("click", () => {
     gameBoard.innerHTML = "";
     GameBoard();
 })
-restartBtn.addEventListener("click", () => {
+newGameBtn.addEventListener("click", () => {
     gameBoardContainer.classList.add("hide");
     choice.classList.remove("hide");
     gameBoard.innerHTML = "";
     GameBoard();
     form.reset();
 })
+newGameBtn.addEventListener("click", () => {
+    console.log("event");
+})
 function GameBoard() {
     let XorO = 0;
     let gameBoardArray = [];
-    // followed array serves for game over check
+    // followed array serves as game over check
     let multiArray = [];
 
     for (let i = 0; i < 9; i++) {
@@ -63,8 +67,10 @@ function GameBoard() {
                 gameBoardCell.textContent = "o";
             else
                 gameBoardCell.textContent = "x";
-            if (winnerAnouncement(multiArray))
-                alert(winnerAnouncement(multiArray));
+            if (winnerAnouncement(multiArray)) {
+                announcerBtn.textContent = winnerAnouncement(multiArray);
+
+            }
             XorO++;
         })
         gameBoard.appendChild(gameBoardCell);
@@ -79,7 +85,6 @@ function GameBoard() {
     multiArray.push([gameBoardArray[0], gameBoardArray[4], gameBoardArray[8]]);
     // rtl diagonal
     multiArray.push([gameBoardArray[2], gameBoardArray[4], gameBoardArray[6]]);
-    console.log(multiArray);
 }
 function winnerAnouncement(array) {
     if (array.some(subArray => subArray.every(item => item.textContent === "x")))
