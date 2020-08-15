@@ -23,10 +23,11 @@
                 player1 name:
                 <input id="player1" type="text" value="Player 1">
             </label>
-            <label class="first-player-choice player-mark-choice">
+            <div class="first-player-choice player-mark-choice">
                 mark type:
-                <input id="player1-mark" type="text">
-            </label>
+                <button id="player1-mark-x" class="mark mark-active" data-mark="player1-mark-x">x</button>
+                <button id="player1-mark-o" class="mark" data-mark="player1-mark-o">o</button>
+            </div>
         </fieldset>
 
         <fieldset id="player2-setup">
@@ -34,22 +35,43 @@
                 player2 name:
                 <input id="player2" type="text" value="Player 2">
             </label>
-            <label class="secon-player-choice player-mark-choice">
+            <div class="second-player-choice player-mark-choice">
                 mark type:
-                <input id="player2-mark" type="text">
-            </label>
+                <button id="player2-mark-x" class="mark" data-mark="player2-mark-x">x</button>
+                <button id="player2-mark-o" class="mark mark-active" data-mark="player2-mark-o">o</button>
+            </div>
         </fieldset>
         <button class="start-btn">Start</button>
     </form>
-    <div class="game-board-container hide">
-        <div class="game-board_-btn">
-            <button class="game-board_-btns new-game-btn">New Game</button>
-            <button class="game-board_-btns new-round-btn">New Round</button>
-            <button class="game-board_-btns announcer-btn">Game undergoes</button>
+    <div class="game hide">
+        <div id="end-round-announcer" class="margin-bottom">
+            <h2 id="winner" class="winner hide"></h2>
+            <h2 id="draw" class="draw hide">DRAW</h2>;
         </div>
-        <div class="game-board">
+        <div class="game-board-container">
+            <div class="game-board_-btn">
+                <button class="game-board_-btns new-game-btn">New Game</button>
+                <button class="game-board_-btns new-round-btn">New Round</button>
+            </div>
+            <div class="game-board">
 
+            </div>
+            <h3 class="ultimate-score">Goal score: <span id="ultimate-score"></span></h3>
+            <div class="players-info">
+                <div class="players-info__player1">
+                    <h4 class="players-info__score">player1 score: <span id="player1-score"></span></h4>
+                    <h4 class="players-info__mark">player1 mark: <span id="player1-mark"></span></h4>
+                </div>
+                <div class="players-info__player2">
+                    <h4 class=" player-info__score">player2 score: <span id="player2-score"></span></h4>
+                    <h4 class="players-info__mark">player2 mark: <span id="player2-mark"></span></h4>
+                </div>
+            </div>
         </div>
+    </div>
+    <div id="ultimate-winner-display" class="ultimate-winner-display">
+        <h1 class="ultimate-winner">ULTIMATE WINNER IS: <span>play 1</span></h1>
+        <button id="restart-btn" class="restart-btn">RESTART</button>
     </div>
 
     <script src="main2.js"></script>

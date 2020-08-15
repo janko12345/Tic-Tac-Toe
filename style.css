@@ -26,6 +26,7 @@ button {
   color: white;
   background: var(--primary-clr);
   cursor: pointer;
+  padding: 10px 20px;
 }
 
 button:hover {
@@ -38,6 +39,7 @@ button:active {
 }
 
 .site-title {
+  font-size: 2.5rem;
   text-align: center;
   padding: 40px 0;
   margin-bottom: 40px;
@@ -86,6 +88,7 @@ button:active {
 
 .player-form .player-mark-choice {
   margin-left: 20px;
+  display: inline-block;
 }
 
 .player-form input {
@@ -100,8 +103,55 @@ button:active {
   padding: 10px 40px;
 }
 
+.ultimate-winner, .winner, .draw {
+  margin: 0 auto;
+  font-size: 1.5rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+  line-height: 1.3;
+}
+
+.smiley {
+  color: #bbb;
+}
+
+.winner::before, .draw::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background: white;
+  bottom: 0;
+}
+
+.winner::before {
+  height: .1px;
+  background: var(--primary-clr);
+  -webkit-box-shadow: 0 0 10px 3px var(--primary-clr);
+          box-shadow: 0 0 10px 3px var(--primary-clr);
+}
+
 .game-board-container {
   position: relative;
+}
+
+.game-board-container .players-info {
+  position: absolute;
+  top: 20%;
+  left: 70%;
+  line-height: 1.5;
+}
+
+.game-board-container .players-info__player1 {
+  margin-bottom: 30px;
+}
+
+.game-board-container .ultimate-score {
+  position: absolute;
+  top: 5%;
+  left: 70%;
 }
 
 .game-board {
@@ -175,22 +225,153 @@ button:active {
   padding: 15px 0;
 }
 
-.game-board_-btns:last-child {
-  margin-top: 200px;
-  max-width: 200px;
-  padding: 15px 20px;
+.ultimate-winner-display {
+  height: 100vh;
+  width: 100vw;
+  background: rgba(51, 51, 51, 0.9);
+  position: fixed;
+  top: 0;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
 }
 
-.game-board_-btns:last-child:hover {
-  background: var(--primary-clr);
-  color: #fff;
+.ultimate-winner-display button {
+  margin-top: 20px;
 }
 
-.game-board_-btns:last-child:active {
-  background: var(--primary-clr);
+.ultimate-winner-display h1 {
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+.ultimate-winner-display span {
+  margin-left: 10px;
+  position: absolute;
+  display: inline-block;
+  text-transform: uppercase;
+  top: 0;
+}
+
+/* helper classes */
+.show-ultimate-winner {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 
 .hide {
   display: none;
+}
+
+.mark-active {
+  background: #ccc;
+  color: black;
+}
+
+.margin-bottom {
+  margin-bottom: 1em;
+}
+
+.blink {
+  -webkit-animation: blinking .5s infinite linear;
+          animation: blinking .5s infinite linear;
+}
+
+.jump {
+  -webkit-animation: jump 1s 1s infinite cubic-bezier(0.78, 0.2, 0.34, 0.84);
+          animation: jump 1s 1s infinite cubic-bezier(0.78, 0.2, 0.34, 0.84);
+}
+
+/* keyframes */
+@-webkit-keyframes jump {
+  30% {
+    top: -10px;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  45% {
+    top: -5px;
+    -webkit-transform: scale(1.05, 1.15);
+            transform: scale(1.05, 1.15);
+  }
+  70% {
+    top: -12px;
+    -webkit-transform: scale(1.1, 1.2);
+            transform: scale(1.1, 1.2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    top: 0;
+  }
+}
+@keyframes jump {
+  30% {
+    top: -10px;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  45% {
+    top: -5px;
+    -webkit-transform: scale(1.05, 1.15);
+            transform: scale(1.05, 1.15);
+  }
+  70% {
+    top: -12px;
+    -webkit-transform: scale(1.1, 1.2);
+            transform: scale(1.1, 1.2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    top: 0;
+  }
+}
+
+@-webkit-keyframes blinking {
+  0% {
+    color: #8204f8;
+  }
+  33% {
+    color: lime;
+  }
+  66% {
+    color: #00f7ff;
+  }
+  100% {
+    color: #ca0505;
+  }
+}
+
+@keyframes blinking {
+  0% {
+    color: #8204f8;
+  }
+  33% {
+    color: lime;
+  }
+  66% {
+    color: #00f7ff;
+  }
+  100% {
+    color: #ca0505;
+  }
 }
 /*# sourceMappingURL=style.css.map */

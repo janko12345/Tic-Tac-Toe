@@ -12,7 +12,6 @@ const gameBoardContainer = document.querySelector(".game-board-container");
 const gameBoard = document.querySelector(".game-board");
 const newGameBtn = document.querySelector(".new-game-btn");
 const newRoundBtn = document.querySelector(".new-round-btn");
-const announcerBtn = document.querySelector(".announcer-btn");
 playerBtn.addEventListener("click", () => {
     choice.classList.add("hide");
     console.log(form);
@@ -68,7 +67,7 @@ function GameBoard() {
             else
                 gameBoardCell.textContent = "x";
             if (winnerAnouncement(multiArray)) {
-                announcerBtn.textContent = winnerAnouncement(multiArray);
+                console.log(winnerAnouncement(multiArray));
 
             }
             XorO++;
