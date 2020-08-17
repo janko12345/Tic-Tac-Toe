@@ -133,25 +133,41 @@ button:active {
           box-shadow: 0 0 10px 3px var(--primary-clr);
 }
 
-.game-board-container {
+.game-controls-container {
   position: relative;
 }
 
-.game-board-container .players-info {
+.game-controls-container .players-info {
   position: absolute;
   top: 20%;
   left: 70%;
   line-height: 1.5;
 }
 
-.game-board-container .players-info__player1 {
-  margin-bottom: 30px;
+.game-controls-container .players-info div:first-child {
+  margin-bottom: 60px;
 }
 
-.game-board-container .ultimate-score {
+.game-controls-container .players-info__player {
+  position: relative;
+}
+
+.game-controls-container .players-info__player h4 {
+  font-size: 1.2rem;
+}
+
+.game-controls-container .players-info__dynamic {
+  position: absolute;
+  right: -5em;
+  top: -9px;
+}
+
+.game-controls-container .ultimate-score {
+  font-family: serif;
+  font-size: 1.6rem;
   position: absolute;
   top: 5%;
-  left: 70%;
+  left: 76%;
 }
 
 .game-board {
@@ -203,7 +219,7 @@ button:active {
           transform: scale(1);
 }
 
-.game-board_-btn {
+.game-board_-btns {
   position: absolute;
   top: 20%;
   left: 400px;
@@ -220,7 +236,7 @@ button:active {
           align-items: center;
 }
 
-.game-board_-btns {
+.game-board_-btns__btn {
   width: 100px;
   padding: 15px 0;
 }

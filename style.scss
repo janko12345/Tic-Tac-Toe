@@ -103,22 +103,34 @@ button{
     background: var(--primary-clr);
     box-shadow: 0 0 10px 3px var(--primary-clr);
 }
-
-.game-board-container{
+.game-controls-container{
     position: relative;
     .players-info{
         position: absolute;
         top: 20%;
         left: 70%;
         line-height: 1.5;
-        &__player1{
-            margin-bottom: 30px;
+        & div:first-child{
+            margin-bottom: 60px;
+        }
+        &__player{
+            position: relative;
+            h4{
+                font-size: 1.2rem;
+            }
+        }
+        &__dynamic{
+            position: absolute;
+            right: -5em;
+            top: -9px;
         }
     }
     .ultimate-score{
+        font-family: serif;
+        font-size: 1.6rem;
         position: absolute;
         top: 5%;
-        left: 70%;
+        left: 76%;
     }
 }
 .game-board{
@@ -151,7 +163,7 @@ button{
             transform: scale(1);
         }
     }
-    &_-btn{
+    &_-btns{
         position: absolute;
         top: 20%;
         left: 400px;
@@ -159,11 +171,9 @@ button{
         flex-direction: column;
         row-gap: 20px;
         align-items: center;
-        &s{
+        &__btn{
             width: 100px;
             padding: 15px 0;
-            
-            
         }
     }
     

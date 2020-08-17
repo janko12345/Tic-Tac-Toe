@@ -10,71 +10,76 @@
 
 <body>
     <h1 class="site-title">Tic Tac Toe</h1>
-    <div class="choice-container">
+    <div id="choice-container" class="choice-container">
         <p class="vs">PLAYER VS:</p>
         <div class="choice">
-            <button class="computer-btn">COMPUTER</button>
-            <button class="player-btn">PLAYER</button>
+            <button id="computer-btn">COMPUTER</button>
+            <button id="player-btn" class="player-btn">PLAYER</button>
         </div>
     </div>
     <form class="player-form hide">
         <fieldset id="player1-setup">
-            <label class="first-player">
+            <label>
                 player1 name:
-                <input id="player1" type="text" value="Player 1">
+                <input id="player1-input" type="text" value="Player 1">
             </label>
-            <div class="first-player-choice player-mark-choice">
+            <div class="player-mark-choice">
                 mark type:
-                <button id="player1-mark-x" class="mark mark-active" data-mark="player1-mark-x">x</button>
-                <button id="player1-mark-o" class="mark" data-mark="player1-mark-o">o</button>
+                <button id="player1-mark-x" class="mark-active" data-player1-mark-active="true">x</button>
+                <button id="player1-mark-o" data-player1-mark-active="false">o</button>
             </div>
         </fieldset>
 
         <fieldset id="player2-setup">
-            <label class="second-player">
+            <label>
                 player2 name:
-                <input id="player2" type="text" value="Player 2">
+                <input id="player2-input" type="text" value="Player 2">
             </label>
-            <div class="second-player-choice player-mark-choice">
+            <div class="player-mark-choice">
                 mark type:
-                <button id="player2-mark-x" class="mark" data-mark="player2-mark-x">x</button>
-                <button id="player2-mark-o" class="mark mark-active" data-mark="player2-mark-o">o</button>
+                <button id="player2-mark-x" data-player2-mark-active="false">x</button>
+                <button id="player2-mark-o" class="mark-active" data-player2-mark-active="true">o</button>
             </div>
         </fieldset>
-        <button class="start-btn">Start</button>
+        <button id="start-btn">Start</button>
     </form>
-    <div class="game hide">
+    <div id="game-container" class="hide">
         <div id="end-round-announcer" class="margin-bottom">
-            <h2 id="winner" class="winner hide"></h2>
-            <h2 id="draw" class="draw hide">DRAW</h2>;
+            <h2 id="announcer" class="hide"></h2>
         </div>
-        <div class="game-board-container">
-            <div class="game-board_-btn">
-                <button class="game-board_-btns new-game-btn">New Game</button>
-                <button class="game-board_-btns new-round-btn">New Round</button>
+        <div id="game-controls-container" class="game-controls-container">
+            <div class="game-board_-btns">
+                <button id="new-game-btn" class="game-board_-btns__btn">New Game</button>
+                <button id="new-round-btn" class="game-board_-btns__btn">New Round</button>
             </div>
-            <div class="game-board">
+            <div id="game-board" class="game-board">
 
             </div>
             <h3 class="ultimate-score">Goal score: <span id="ultimate-score"></span></h3>
             <div class="players-info">
-                <div class="players-info__player1">
-                    <h4 class="players-info__score">player1 score: <span id="player1-score"></span></h4>
-                    <h4 class="players-info__mark">player1 mark: <span id="player1-mark"></span></h4>
+                <div id="player1-info" class="players-info__player">
+                    <h4 id="player1-name"></h4>
+                    <div class="players-info__dynamic">
+                        <p>score: <span id="player1-score"></span></p>
+                        <p>mark: <span id="player1-mark"></span></p>
+                    </div>
                 </div>
-                <div class="players-info__player2">
-                    <h4 class=" player-info__score">player2 score: <span id="player2-score"></span></h4>
-                    <h4 class="players-info__mark">player2 mark: <span id="player2-mark"></span></h4>
+                <div id="player2-info" class="players-info__player">
+                    <h4 id="player2-name"></h4>
+                    <div class="players-info__dynamic">
+                        <p>score: <span id="player2-score"></span></p>
+                        <p>mark: <span id="player2-mark"></span></p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <div id="ultimate-winner-display" class="ultimate-winner-display">
-        <h1 class="ultimate-winner">ULTIMATE WINNER IS: <span>play 1</span></h1>
+        <h1 class="ultimate-winner">ULTIMATE WINNER IS: <span id="ultimate-winner"></span></h1>
         <button id="restart-btn" class="restart-btn">RESTART</button>
     </div>
 
-    <script src="main2.js"></script>
+    <script src="main.js"></script>
 </body>
 
 </html>
