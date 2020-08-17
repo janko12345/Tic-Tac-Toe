@@ -369,7 +369,6 @@ const GameDisplay = (function () {
         ultWinner.textContent = Game.winner().getName();
         ultWinner.classList.add("jump");
         ultWinnerDisplay.classList.add("show-ultimate-winner");
-        ultWinnerDisplay.classList.add("blink");
     }
 
     return {
