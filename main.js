@@ -205,7 +205,7 @@ const GameSetupDOM = (function () {
 
     /* buttons */
     const computerBtn = getObjElement.computerBtn;
-    const computerInput = getObjElement.player2Input;
+    const player2Input = getObjElement.player2Input;
     const playerBtn = getObjElement.playerBtn;
     const player1ChoiceX = getObjElement.player1ChoiceX;
     const player1ChoiceO = getObjElement.player1ChoiceO;
@@ -240,7 +240,7 @@ const GameSetupDOM = (function () {
     }
 
     function vsComputer() {
-        computerInput.value = "Computer";
+        player2Input.value = "Computer";
         PubSub.emit("pve");
     }
     function vsPlayer() {
@@ -469,9 +469,9 @@ const GameFlow = (function () {
             return;
         GameBoard.gameBoard[cell.dataset.index] = cell.textContent = Game.getTurningPlayer().getChoice();
 
+
         if (isDraw = Game.isDraw()) {
             GameDisplay.showDraw();
-
             return;
         }
 
@@ -480,14 +480,14 @@ const GameFlow = (function () {
             GameDisplay.showWinner();
             SidePlayersInfo.renderScore();
 
-
             if (Game.isUltimateWinner())
                 GameDisplay.showUltWinner();
+
             return;
         }
         Game.switchTurn();
 
-        /* computer logic */
+        /* computer's turn */
 
         let cells = [...getObjElement.gameBoard.children];
         let indexToPut = Math.floor(Math.random() * cells.length);
@@ -513,6 +513,8 @@ const GameFlow = (function () {
         }
         Game.switchTurn();
     }
+
+
     function pvpRound(e) {
         let cell = e.target;
 

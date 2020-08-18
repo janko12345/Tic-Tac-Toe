@@ -306,8 +306,8 @@ button:active {
 }
 
 .blink {
-  -webkit-animation: blinking .5s infinite linear;
-          animation: blinking .5s infinite linear;
+  -webkit-animation: blinking 2s linear infinite;
+          animation: blinking 2s linear infinite;
 }
 
 .jump {
@@ -363,31 +363,37 @@ button:active {
 
 @-webkit-keyframes blinking {
   0% {
-    color: #8204f8;
+    color: #9b51e0;
   }
-  33% {
+  25% {
     color: lime;
   }
-  66% {
+  50% {
     color: #00f7ff;
   }
+  75% {
+    color: #e94242;
+  }
   100% {
-    color: #ca0505;
+    color: #9b51e0;
   }
 }
 
 @keyframes blinking {
   0% {
-    color: #8204f8;
+    color: #9b51e0;
   }
-  33% {
+  25% {
     color: lime;
   }
-  66% {
+  50% {
     color: #00f7ff;
   }
+  75% {
+    color: #e94242;
+  }
   100% {
-    color: #ca0505;
+    color: #9b51e0;
   }
 }
 /*# sourceMappingURL=style.css.map */

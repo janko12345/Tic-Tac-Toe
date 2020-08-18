@@ -223,7 +223,7 @@ button{
 }
 // animation helper classes
 .blink{
-    animation: blinking .5s infinite linear;
+    animation: blinking 2s linear infinite;
 }
 .jump{
     animation: jump 1s 1s  infinite cubic-bezier(.78,.2,.34,.84);
@@ -251,16 +251,19 @@ button{
 }
 @keyframes blinking {
     0%{
-        color: rgb(130, 4, 248);
+        color: rgb(155, 81, 224);
     }
-    33%{
+    25%{
         color: rgb(0, 255, 0);
     }
-    66%{
+    50%{
         color: rgb(0, 247, 255);
     }
+    75%{
+        color: rgb(233, 66, 66);
+    }
     100%{
-        color: rgb(202, 5, 5);
+        color: rgb(155, 81, 224);
     }
     
 }
